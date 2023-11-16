@@ -1,0 +1,132 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  justify-items: center;
+  background-image: radial-gradient(rgb(147, 141, 141), black);
+  flex-wrap: wrap;
+}
+
+.welcome {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+h1 {
+  text-align: center;
+  color: rgb(221, 225, 229);
+  margin-bottom: 60px;
+  font-size: 3rem;
+  text-shadow: 5px 5px 10px black;
+}
+
+ul {
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  width: 300px;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: orange;
+  background-color: black;
+  padding: 10px 30px;
+  border-radius: 5px;
+  font-weight: bolder;
+}
+a:hover {
+  color: tomato;
+}
+.clock {
+  width: 450px;
+  height: 450px;
+  background-color: orange;
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 5px 5px 15px rgb(18, 17, 17);
+}
+
+.clock::after {
+  position: absolute;
+  content: "";
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: black;
+  z-index: 3;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: 5px solid #555;
+}
+
+.hand {
+  --rotation: 0;
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  transform-origin: bottom;
+  transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+  z-index: 1;
+}
+
+.hour {
+  border-top-left-radius: 60px;
+  border-top-right-radius: 60px;
+  width: 20px;
+  height: 30%;
+  background-color: #555;
+  box-shadow: 5px 5px 15px rgb(18, 17, 17);
+}
+
+.min {
+  border-top-left-radius: 60px;
+  border-top-right-radius: 60px;
+  width: 20px;
+  height: 45%;
+  background-color: #555;
+  box-shadow: 5px 5px 15px rgb(18, 17, 17);
+}
+
+.sec {
+  width: 3px;
+  height: 47%;
+  background-color: rgb(239, 8, 8);
+  z-index: 2;
+  box-shadow: 2px 2px 8px rgb(18, 17, 17);
+}
+
+.markers {
+  --rotation: 0;
+  width: 450px;
+  height: 450px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  transform: rotate(calc(var(--rotation) * 1deg));
+}
+
+.markers .marker {
+  width: 1px;
+  height: 10px;
+  background-color: rgb(43, 39, 39);
+  margin-top: 5px;
+  font-size: 3rem;
+  font-weight: bolder;
+  color: white;
+
+  line-height: 5.5rem;
+  display: flex;
+  justify-content: center;
+}
